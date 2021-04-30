@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Knives</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tag</th>
+      <th scope="col">Url</th>
+      <th scope="col">Code</th>
+      <th scope="col" colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @knives.each do |knife| %>
+      <tr>
+        <td><%= knife.tag %></td>
+        <td><%= knife.url %></td>
+        <td><%= knife.code %></td>
+        <td><%= link_to 'Show', knife %></td>
+        <td><%= link_to 'Edit', edit_knife_path(knife) %></td>
+        <td><%= link_to 'Destroy', knife, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Knife', new_knife_path %>
